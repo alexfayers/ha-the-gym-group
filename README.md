@@ -37,7 +37,7 @@ off how busy the gym is, or whether it's open.
 
 ### Option A - HACS (recommended)
 
-1. In Home Assistant, open **HACS > Integrations > ... > Custom repositories**.
+1. In Home Assistant, open **HACS -> Integrations -> ... -> Custom repositories**.
 2. Add `https://github.com/codebeetl/ha-the-gym-group` with category
    **Integration**.
 3. Find **The Gym Group** in the HACS integrations list and click **Download**.
@@ -56,7 +56,7 @@ off how busy the gym is, or whether it's open.
 
 ## Configuration
 
-1. In Home Assistant, go to **Settings > Devices & services > Add integration**.
+1. In Home Assistant, go to **Settings -> Devices & services -> Add integration**.
 2. Search for **The Gym Group** and select it.
 3. Enter the **email** and **PIN** you use to sign into the mobile app.
 4. The integration logs in, identifies your home gym, and creates a device for
@@ -66,7 +66,7 @@ Everything is configured through the UI - there is **no YAML configuration**.
 
 ### Changing credentials later
 
-Open the integration in **Settings > Devices & services**, click **Configure**,
+Open the integration in **Settings -> Devices & services**, click **Configure**,
 and re-enter the username and password. If the new credentials belong to a
 different Gym Group account, the integration will repoint the device at that
 account.
@@ -93,7 +93,7 @@ sensible defaults:
 
 Most users should leave these alone. If the integration starts failing all
 requests with 4xx after a Gym Group app update, install the latest official
-Android app, look up its version (Play Store > app > "About") and version
+Android app, look up its version (Play Store -> app -> "About") and version
 code, and update the two `Application version` fields via **Configure**. The
 integration will re-validate against the API as part of saving, so a typo
 that breaks login is caught immediately rather than at the next refresh.
@@ -119,7 +119,7 @@ Both sensors share additional state attributes on **Gym Population**:
 
 ## Device automations
 
-Use the **Automations & scenes > Create automation > Device** trigger picker on
+Use the **Automations & scenes -> Create automation -> Device** trigger picker on
 the gym device to build automations without writing YAML.
 
 Available trigger types:
@@ -186,12 +186,12 @@ action:
 
 Try signing into the official Gym Group app with the same credentials. If the
 app works but the integration doesn't, download a diagnostics bundle
-(**Settings > Devices & services > The Gym Group > ... > Download diagnostics**)
+(**Settings -> Devices & services -> The Gym Group -> ... -> Download diagnostics**)
 and open an issue.
 
 ### Entities are "unavailable" or the population is `unknown`
 
-Check the Home Assistant log (**Settings > System > Logs**) for entries from
+Check the Home Assistant log (**Settings -> System -> Logs**) for entries from
 `custom_components.the_gym_group`. Transient API errors are logged at `ERROR`;
 successful polls at `DEBUG`.
 
@@ -210,7 +210,7 @@ Restart Home Assistant to apply.
 ### Reauth loop after changing your PIN
 
 The integration raises a reauth flow when the API rejects your credentials.
-Open **Settings > Devices & services**, click the "Repair" banner, and enter
+Open **Settings -> Devices & services**, click the "Repair" banner, and enter
 your new PIN.
 
 ## Diagnostics
